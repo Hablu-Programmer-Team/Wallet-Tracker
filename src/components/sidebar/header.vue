@@ -22,7 +22,7 @@ const sideHeader: sideHeaderPros[] = [
       :key="header.id"
       v-for="header in sideHeader"
       @click="defineHeaderId(header.id)"
-      class="w-full h-[40px] cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm"
+      class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm"
       :class="
         headerId === header.id
           ? ' border-[#10b981] text-[#10b981]'
@@ -33,7 +33,7 @@ const sideHeader: sideHeaderPros[] = [
     </button>
   </div>
   <!-- bottom header  -->
-  <div class="mt-3 px-2 flex gap-10 items-center justify-between">
+  <div class="py-3 px-2 flex gap-10 items-center justify-between">
     <button
       class="text-xs px-3 py-1 bg-[#1f1f1f] text-white/50 font-semibold cursor-pointer flex items-center gap-2 rounded-sm md:text-sm"
     >

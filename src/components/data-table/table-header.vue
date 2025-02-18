@@ -32,7 +32,7 @@ const defineHeaderId = (id: number) => {
       :key="header.id"
       v-for="header in sideHeader"
       @click="defineHeaderId(header.id)"
-      class="w-full h-[40px] cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm"
+      class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm"
       :class="
         headerId === header.id
           ? ' border-[#10b981] text-[#10b981]'
