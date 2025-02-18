@@ -10,18 +10,9 @@ type sideHeaderPros = {
 
 const headerId = ref<number>(2);
 const sideHeader: sideHeaderPros[] = [
-  {
-    id: 1,
-    name: "Monitor Square",
-  },
-  {
-    id: 2,
-    name: "Wallet Tracker(297/300)",
-  },
-  {
-    id: 3,
-    name: "Alerts",
-  },
+  { id: 1, name: "Monitor Square" },
+  { id: 2, name: "Wallet Tracker(297/300)" },
+  { id: 3, name: "Alerts" },
 ];
 
 const defineHeaderId = (id: number) => {
