@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import FilterSvg from "./icons/FilterSvg.vue";
-import SoundSvg from "./icons/SoundSvg.vue";
-import DoubbleArrowSvg from "./Icons/DoubbleArrowSvg.vue";
+import DoubbleArrowSvg from "../icons/DoubbleArrowSvg.vue";
 
 import { ref } from "vue";
 
