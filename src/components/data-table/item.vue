@@ -1,22 +1,16 @@
 <script setup lang="ts">
+import { type PropType } from "vue";
 import CommonButton from "../common/button.vue";
 import button2 from "../common/button2.vue";
 import copy from "../icons/copy.vue";
-import { type PropType } from "vue";
-interface ITag {
-  id: number;
-  name: string;
-}
+
+type ITag = { id: number; name: string };
 defineProps({
   createdAgo: String,
   name: String,
   address: String,
   chain: String,
-  tags: {
-    type: Array as PropType<ITag[]>,
-    required: false,
-    default: () => []
-  }
+  tags: { type: Array as PropType<ITag[]>, required: false, default: () => [] },
 });
 </script>
 
@@ -26,10 +20,10 @@ defineProps({
   >
     <div>
       <div class="flex gap-11 items-center">
-         <div class="w-4 h-4 rounded-sm bg-gray-800/80 border border-gray-600 cursor-pointer">
-
-         </div>
-        <p class="text-[#319b64] text-sm font-semibold">{{createdAgo}}</p>
+        <div
+          class="w-4 h-4 rounded-sm bg-gray-800/80 border border-gray-600 cursor-pointer"
+        ></div>
+        <p class="text-[#319b64] text-sm font-semibold">{{ createdAgo }}</p>
       </div>
     </div>
     <div>
@@ -39,21 +33,23 @@ defineProps({
           class="h-6 w-6 border border-gray-800 rounded-md p-1"
           alt="Apple logo"
         />
-        <p class="font-bold text-sm">{{name}}</p>
-        <p class="text-[#5C5C5E] font-semibold text-sm">{{address}}</p>
+        <p class="font-bold text-sm">{{ name }}</p>
+        <p class="text-[#5C5C5E] font-semibold text-sm">{{ address }}</p>
         <copy />
       </div>
     </div>
     <div>
       <div class="bg-[#874ba8]/30 inline-block rounded-md">
-        <p class="uppercase px-1 py-0.5 font-bold text-[#874ba8] text-sm">solana</p>
+        <p class="uppercase px-1 py-0.5 font-bold text-[#874ba8] text-sm">
+          solana
+        </p>
       </div>
     </div>
     <div>
       <div
         class="border border-gray-800 rounded-md p-1 flex gap-1 max-w-[230px]"
       >
-        <CommonButton v-for="tag of tags">{{tag.name}}</CommonButton>
+        <CommonButton v-for="tag of tags">{{ tag.name }}</CommonButton>
       </div>
     </div>
     <div class="flex justify-end">

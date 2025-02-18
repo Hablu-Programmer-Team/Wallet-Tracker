@@ -12,7 +12,7 @@ const MyFunc = (idx: number): number => (active.value = idx);
 
 <template>
   <aside
-    class="p-4 max-w-20 h-full text-slate-300 border-e border-gray-400/80 flex flex-col justify-between"
+    class="p-4 max-w-20 text-slate-300 border-e border-gray-400/80 flex flex-col justify-between h-screen"
   >
     <div
       class="flex flex-col items-center gap-4 pb-4 border-b border-slate-200/40"

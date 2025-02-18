@@ -5,7 +5,7 @@ import SnowFlakeIcon from "../icons/SnowFlakeIcon.vue";
 import Card from "./card.vue";
 import SidebarHeader from "./header.vue";
 
-const cardItems = Array.from({ length: 20 }, (_, index) => ({
+const items = Array.from({ length: 20 }, (_, index) => ({
   iconOne: index % 2 === 0 ? SnowFlakeIcon : Dolphin,
   iconTwo: index % 2 === 0 ? Dolphin : SnowFlakeIcon,
   username: `User ${index + 1}`,
@@ -23,23 +23,19 @@ const cardItems = Array.from({ length: 20 }, (_, index) => ({
 </script>
 
 <template>
-  <div class="rounded-sm h-full flex-1 md:flex-[0.2] border border-white/20">
+  <div
+    class="rounded-sm h-full flex-1 md:flex-[0.2] border border-white/20 max-h-screen"
+  >
     <SidebarHeader />
     <div
-      class="py-2.5 max-h-screen overflow-y-scroll scroll-smooth scrollbar-thin"
+      class="py-2.5 max-h-screen overflow-y-scroll scroll-smooth scrollbar-thin pb-40"
     >
       <Card
-        v-for="(item, index) in cardItems"
+        v-for="(item, index) in items"
         :key="index"
-        :isLastItem="index === cardItems.length - 1"
+        :isLastItem="index === items.length - 1"
         v-bind="item"
       />
     </div>
   </div>
 </template>
-
-<style scoped>
-.scrollbar-thin::-webkit-scrollbar {
-  width: 0;
-}
-</style>

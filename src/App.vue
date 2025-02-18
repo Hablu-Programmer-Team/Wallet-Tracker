@@ -8,12 +8,12 @@ import Sidebar from "./components/sidebar/main.vue";
 <template>
   <main class="bg-[#0E0E10]">
     <div
-      class="mx-auto h-screen overflow-y-hidden flex flex-col sm:flex-row gap-x-1.5"
+      class="mx-auto flex flex-col sm:flex-row gap-x-1.5 overflow-hidden max-h-screen"
     >
       <ActiveBar />
       <div class="w-full">
         <Navbar />
-        <div class="flex h-screen w-full gap-1.5 pe-3.5">
+        <div class="flex w-full gap-1.5 pe-3.5">
           <Sidebar />
           <DataTable />
         </div>
