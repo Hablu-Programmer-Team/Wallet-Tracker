@@ -2,40 +2,58 @@
 import CommonButton from "../common/button.vue";
 import button2 from "../common/button2.vue";
 import copy from "../icons/copy.vue";
+import { type PropType } from "vue";
+interface ITag {
+  id: number;
+  name: string;
+}
+defineProps({
+  createdAgo: String,
+  name: String,
+  address: String,
+  chain: String,
+  tags: {
+    type: Array as PropType<ITag[]>,
+    required: false,
+    default: () => []
+  }
+});
 </script>
 
 <template>
   <div
-    class="grid grid-cols-5 w-full bg-[#0d0d0f] h-[54px] text-white items-center ps-3 pe-2 border border-[#2d2d2d]"
+    class="grid grid-cols-5 w-full bg-[#0d0d0f] h-[50px] text-white items-center ps-3 pe-2 border border-[#2d2d2d]"
   >
     <div>
       <div class="flex gap-11 items-center">
-        <input type="checkbox" class="checkbox" />
-        <p class="text-[#319b64] font-bold">7h ago</p>
+         <div class="w-4 h-4 rounded-sm bg-gray-800/80 border border-gray-600 cursor-pointer">
+
+         </div>
+        <p class="text-[#319b64] text-sm font-semibold">{{createdAgo}}</p>
       </div>
     </div>
     <div>
-      <div class="flex gap-1 items-center">
+      <div class="flex gap-0.5 items-center text-slate-300">
         <img
           src="/apple.png"
-          class="h-6 w-6 border-2 border-[#2d2d2d] rounded-md p-1"
+          class="h-6 w-6 border border-gray-800 rounded-md p-1"
           alt="Apple logo"
         />
-        <p class="text-[#CCCCCE] font-bold">Mamun</p>
+        <p class="font-bold text-sm">{{name}}</p>
+        <p class="text-[#5C5C5E] font-semibold text-sm">{{address}}</p>
         <copy />
       </div>
     </div>
     <div>
-      <div class="bg-[#483252] inline-block rounded-md">
-        <p class="uppercase p-1 font-bold text-[#84589B]">solina</p>
+      <div class="bg-[#874ba8]/30 inline-block rounded-md">
+        <p class="uppercase px-1 py-0.5 font-bold text-[#874ba8] text-sm">solana</p>
       </div>
     </div>
     <div>
       <div
-        class="border-2 border-[#2d2d2d] rounded-md p-1 flex gap-1 max-w-[200px]"
+        class="border border-gray-800 rounded-md p-1 flex gap-1 max-w-[230px]"
       >
-        <CommonButton>alert</CommonButton>
-        <CommonButton>insider</CommonButton>
+        <CommonButton v-for="tag of tags">{{tag.name}}</CommonButton>
       </div>
     </div>
     <div class="flex justify-end">
@@ -43,19 +61,3 @@ import copy from "../icons/copy.vue";
     </div>
   </div>
 </template>
-
-<style scoped>
-.checkbox {
-  width: 16px;
-  height: 16px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  accent-color: green;
-}
-
-.checkbox:checked {
-  background-color: #4caf50;
-  border-color: #4caf50;
-}
-</style>
