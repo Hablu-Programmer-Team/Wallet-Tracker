@@ -4,7 +4,7 @@ import TableHeader from "./table-header.vue";
 
 <template>
   <div
-    class="flex-[0.7] hidden md:block bg-[#0E0E10] rounded-sm border border-white/20"
+    class="flex-[0.8] hidden md:block bg-[#0E0E10] rounded-sm border border-white/20"
   >
     <TableHeader />
   </div>
