@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DoubbleArrowSvg from "../icons/DoubbleArrowSvg.vue";
+import DoubleArrowSvg from "../icons/DoubleArrowSvg.vue";
 
 import { ref } from "vue";
 
@@ -22,17 +22,19 @@ const defineHeaderId = (id: number) => {
 
 <template>
   <!-- top header  -->
-  <div class="flex justify-between gap-3 w-full md:gap-5 md:max-w-fit">
+  <div
+    class="flex justify-between gap-3 w-full md:gap-5 md:max-w-fit overflow-x-auto"
+  >
     <button
       class="text-[#A0A0A0] bg-[#1f1f1f] px-1 rounded-br-md cursor-pointer"
     >
-      <DoubbleArrowSvg class="w-3" />
+      <DoubleArrowSvg class="w-3" />
     </button>
     <button
       :key="header.id"
       v-for="header in sideHeader"
       @click="defineHeaderId(header.id)"
-      class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm"
+      class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm px-4"
       :class="
         headerId === header.id
           ? ' border-[#10b981] text-[#10b981]'
@@ -43,3 +45,5 @@ const defineHeaderId = (id: number) => {
     </button>
   </div>
 </template>
+
+<style></style>
