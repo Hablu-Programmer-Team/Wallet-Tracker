@@ -49,7 +49,7 @@ const tableItems = Array.from({ length: 40 }, (_, index) => ({
       </div>
     </div>
     <div
-      class="py-2.5 max-h-[80svh] overflow-y-scroll scroll-smooth scrollbar-thin pb-[120px]"
+      class="py-2.5 max-h-[80svh] overflow-y-scroll scroll-smooth scrollbar-thin"
     >
       <Item
         v-for="(item, index) in tableItems"
