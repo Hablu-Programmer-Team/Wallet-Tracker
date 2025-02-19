@@ -7,6 +7,7 @@ import FooterItem from "./components/footer/footerItem.vue";
 import Bell from "./components/Icons/Bell.vue";
 import Twitter from "./components/icons/Twitter.vue";
 import AcademyIcon from "./components/Icons/AcademyIcon.vue";
+import LiveBribe from "./components/Icons/LiveBribe.vue";
 </script>
 
 <template>
@@ -34,6 +35,7 @@ import AcademyIcon from "./components/Icons/AcademyIcon.vue";
     :iconTwo="Twitter"
     :iconThree="Bell"
     :iconFour="AcademyIcon"
+    :iconFive="LiveBribe"
   />
   </main>
 </template>
