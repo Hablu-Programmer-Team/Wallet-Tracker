@@ -37,11 +37,11 @@ onBeforeUnmount(() => {
     class="flex-1 xl:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
   >
     <TableHeader />
-    <div>
+    <div class="overflow-hidden">
       <div
         class="grid grid-cols-5 w-full bg-[#16161a] h-[50px] text-white items-center ps-3 pe-2 border border-[#2d2d2d]"
       >
-        <div>
+        <div class="w-full overflow-x-visible">
           <div class="flex gap-11 items-center">
             <div
               class="w-4 h-4 rounded-sm bg-gray-800/80 border border-gray-600 cursor-pointer"
@@ -65,19 +65,20 @@ onBeforeUnmount(() => {
           <button2 />
         </div>
       </div>
-    </div>
-    <div
-      class="py-2.5 max-h-[var(--dynamic-height)] overflow-y-scroll scroll-smooth scrollbar-thin"
-    >
-      <Item
-        v-for="(item, index) in tableItems"
-        :key="index"
-        :createdAgo="item.createdAgo"
-        :name="item.name"
-        :address="item.address"
-        :chain="item.chain"
-        :tags="item.tags"
-      />
+
+      <div
+        class="py-2.5 max-h-[var(--dynamic-height)] overflow-y-scroll scroll-smooth scrollbar-thin max-w-xl md:max-w-full"
+      >
+        <Item
+          v-for="(item, index) in tableItems"
+          :key="index"
+          :createdAgo="item.createdAgo"
+          :name="item.name"
+          :address="item.address"
+          :chain="item.chain"
+          :tags="item.tags"
+        />
+      </div>
     </div>
   </div>
 </template>
