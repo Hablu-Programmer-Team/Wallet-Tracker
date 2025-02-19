@@ -17,6 +17,8 @@ const MyFunc = (idx: number): number => (active.value = idx);
     <div
       class="flex flex-col items-center gap-4 pb-4 border-b border-slate-200/40"
     >
+      <img src="/bullx_logo.png" alt="bullx_logo" />
+      <img src="/angry-horse.png" alt="angry-horse" />
       <div
         class="text-center inline-block rounded-lg p-2 bg-white/10 cursor-pointer"
       >
