@@ -22,9 +22,7 @@ const defineHeaderId = (id: number) => {
 
 <template>
   <!-- top header  -->
-  <div
-    class="flex justify-between gap-3 w-full md:gap-5 md:max-w-fit overflow-x-auto"
-  >
+  <div class="flex justify-between gap-3 w-full md:gap-5 md:max-w-fit">
     <button
       class="text-[#A0A0A0] bg-[#1f1f1f] px-1 rounded-br-md cursor-pointer"
     >
@@ -35,11 +33,10 @@ const defineHeaderId = (id: number) => {
       v-for="header in sideHeader"
       @click="defineHeaderId(header.id)"
       class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm px-4"
-      :class="
-        headerId === header.id
-          ? ' border-[#10b981] text-[#10b981]'
-          : 'text-[#A0A0A0] border-[#121212]'
-      "
+      :class="{
+        ' border-[#10b981] text-[#10b981]': headerId === header.id,
+        'text-[#A0A0A0] border-[#121212]': headerId !== header.id,
+      }"
     >
       {{ header.name }}
     </button>

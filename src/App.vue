@@ -23,7 +23,7 @@ import Sidebar from "./components/sidebar/main.vue";
 
             <div class="flex-1 overflow-hidden">
               <div class="w-full h-full overflow-x-auto">
-                <DataTable class="min-w-full" />
+                <DataTable />
               </div>
             </div>
           </div>
@@ -46,3 +46,22 @@ import Sidebar from "./components/sidebar/main.vue";
     </div>
   </main>
 </template>
+
+<style>
+::-webkit-scrollbar {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>

@@ -34,7 +34,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="flex-1 xl:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20 min-w-2xl"
+    class="flex-1 xl:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
   >
     <TableHeader />
     <div class="overflow-hidden">
@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
             minmax(150px, 1fr) minmax(150px, 1fr);
         "
       >
-        <div class="w-full overflow-x-visible">
+        <div class="w-full">
           <div class="flex gap-11 items-center">
             <div
               class="w-4 h-4 rounded-sm bg-gray-800/80 border border-gray-600 cursor-pointer"

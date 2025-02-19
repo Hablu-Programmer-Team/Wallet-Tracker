@@ -59,11 +59,14 @@ onBeforeUnmount(() => {
           v-for="item in SidebarDatas"
           :key="item.id"
           v-on:click="MyFunc(item.id)"
-          class="h-[48px] flex flex-col items-center justify-center cursor-pointer gap-1 hover:text-white/80 transition-all duration-300"
-          :class="{ 'text-[#10b981]': item.id === active }"
+          class="h-[48px] flex flex-col items-center justify-center cursor-pointer gap-1 transition-all duration-300"
+          :class="{
+            'text-[#10b981]': item.id === active,
+            'hover:text-white/80': item.id !== active,
+          }"
         >
           <component v-if="item.icon" :is="item.icon" class="size-4" />
-          <p class="text-xs hover:text-white/70 text-center">
+          <p class="text-xs text-center">
             {{ item.label }}
           </p>
         </div>
