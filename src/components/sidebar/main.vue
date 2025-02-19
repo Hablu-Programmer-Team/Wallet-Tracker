@@ -24,7 +24,7 @@ const items = Array.from({ length: 20 }, (_, index) => ({
 
 <template>
   <div
-    class="rounded-sm h-full flex-1 md:flex-[0.2] border border-white/20 max-h-screen"
+    class="rounded-sm hidden lg:block h-full flex-1 md:flex-[0.2] border border-white/20 max-h-screen"
   >
     <SidebarHeader />
     <div

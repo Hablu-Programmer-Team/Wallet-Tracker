@@ -23,9 +23,8 @@ defineProps({
         <div
           class="w-4 h-4 rounded-sm bg-gray-800/80 border border-gray-600 cursor-pointer"
         >
-        <input type="checkbox">
       </div>
-        <p class="text-[#319b64] text-sm font-semibold">{{ createdAgo }}</p>
+        <p class="text-[#319b64] text-xs text-nowrap md:text-sm font-semibold">{{ createdAgo }}</p>
       </div>
     </div>
     <div>
@@ -35,7 +34,7 @@ defineProps({
           class="h-6 w-6 border border-gray-800 rounded-md p-1"
           alt="Apple logo"
         />
-        <p class="font-bold text-white/60 text-sm">{{ name }}</p>
+        <p class="font-bold text-white/60 text-sm text-nowrap">{{ name }}</p>
         <p class="text-[#5C5C5E] font-semibold text-sm">{{ address }}</p>
         <copy />
       </div>

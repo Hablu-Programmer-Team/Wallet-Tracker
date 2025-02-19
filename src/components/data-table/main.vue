@@ -16,7 +16,7 @@ const tableItems = Array.from({ length: 40 }, (_, index) => ({
 
 <template>
   <div
-    class="flex-[0.8] hidden md:block bg-[#0E0E10] rounded-sm border border-white/20"
+    class=" flex-1 lg:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
   >
     <TableHeader />
     <div>
