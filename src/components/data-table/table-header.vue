@@ -3,13 +3,13 @@ import DoubbleArrowSvg from "../icons/DoubbleArrowSvg.vue";
 
 import { ref } from "vue";
 
-type sideHeaderPros = {
+type sideHeaderProps = {
   id: number;
   name: string;
 };
 
 const headerId = ref<number>(2);
-const sideHeader: sideHeaderPros[] = [
+const sideHeader: sideHeaderProps[] = [
   { id: 1, name: "Monitor Square" },
   { id: 2, name: "Wallet Tracker(297/300)" },
   { id: 3, name: "Alerts" },
@@ -22,7 +22,7 @@ const defineHeaderId = (id: number) => {
 
 <template>
   <!-- top header  -->
-  <div class="flex justify-between gap-3 md:gap-5 md:max-w-fit">
+  <div class="flex justify-between gap-3 w-full md:gap-5 md:max-w-fit">
     <button
       class="text-[#A0A0A0] bg-[#1f1f1f] px-1 rounded-br-md cursor-pointer"
     >

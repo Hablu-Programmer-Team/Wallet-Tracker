@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted } from "vue";
 import BitcoinIcon from "../icons/BitcoinIcon.vue";
 import Dolphin from "../icons/DolphinIcon.vue";
 import SnowFlakeIcon from "../icons/SnowFlakeIcon.vue";
@@ -20,15 +21,32 @@ const items = Array.from({ length: 20 }, (_, index) => ({
   marketCap: `$${(Math.random() * 100 + 1).toFixed(1)}B`,
   time: `${Math.floor((index * 30) / 60)}m ${(index * 30) % 60}s`,
 }));
+
+const updateHeight = () => {
+  const vh = window.innerHeight * 1;
+  document.documentElement.style.setProperty(
+    "--dynamic-height",
+    `${vh - 210}px`
+  );
+};
+
+onMounted(() => {
+  window.addEventListener("resize", updateHeight);
+  updateHeight();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateHeight);
+});
 </script>
 
 <template>
   <div
-    class="rounded-sm h-full flex-1 md:flex-[0.2] border border-white/20 max-h-screen"
+    class="rounded-sm hidden xl:block h-full flex-1 md:flex-[0.2] border border-white/20"
   >
     <SidebarHeader />
     <div
-      class="py-2.5 max-h-screen overflow-y-scroll scroll-smooth scrollbar-thin pb-40"
+      class="py-2.5 max-h-[var(--dynamic-height)] overflow-y-scroll scroll-smooth scrollbar-thin"
     >
       <Card
         v-for="(item, index) in items"

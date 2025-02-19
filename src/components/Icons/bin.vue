@@ -3,11 +3,11 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#797A7E"
-      stroke-width="2"
+      stroke="#FFFFFF80"
+      stroke-width="1"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="w-5 h-5 text-gray-500"
+      class="w-4 h-4 text-white/80"
     >
       <path d="M3 6h18"></path>
       <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
