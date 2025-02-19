@@ -12,12 +12,12 @@ import Sidebar from "./components/sidebar/main.vue";
 
 <template>
   <main class="bg-[#0E0E10]">
-    <div class="mx-auto flex flex-col gap-x-1.5">
+    <div class="mx-auto flex flex-col gap-x-1.5 h-screen max-h-screen">
       <div class="flex gap-x-1.5">
         <ActiveBar />
         <div class="w-full space-y-1.5">
           <Navbar />
-          <div class="flex w-full gap-1.5 pe-3.5">
+          <div class="flex w-full gap-1.5 pe-3.5 overflow-y-hidden">
             <Sidebar />
             <DataTable />
           </div>

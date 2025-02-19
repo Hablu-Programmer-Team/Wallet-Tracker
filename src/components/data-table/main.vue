@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted } from "vue";
 import Item from "./item.vue";
 import TableHeader from "./table-header.vue";
 
@@ -12,11 +13,28 @@ const tableItems = Array.from({ length: 40 }, (_, index) => ({
     { id: 2, name: ["Meme", "Stablecoin", "L2", "DEX"][index % 4] },
   ],
 }));
+
+const updateHeight = () => {
+  const vh = window.innerHeight * 1;
+  document.documentElement.style.setProperty(
+    "--dynamic-height",
+    `${vh - 210}px`
+  );
+};
+
+onMounted(() => {
+  window.addEventListener("resize", updateHeight);
+  updateHeight();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateHeight);
+});
 </script>
 
 <template>
   <div
-    class="flex-1 lg:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
+    class="flex-1 xl:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
   >
     <TableHeader />
     <div>
@@ -49,7 +67,7 @@ const tableItems = Array.from({ length: 40 }, (_, index) => ({
       </div>
     </div>
     <div
-      class="py-2.5 max-h-[80svh] overflow-y-scroll scroll-smooth scrollbar-thin"
+      class="py-2.5 max-h-[var(--dynamic-height)] overflow-y-scroll scroll-smooth scrollbar-thin"
     >
       <Item
         v-for="(item, index) in tableItems"
