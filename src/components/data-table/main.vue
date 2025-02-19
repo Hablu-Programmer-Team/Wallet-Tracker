@@ -34,12 +34,17 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="flex-1 xl:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
+    class="flex-1 xl:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20 min-w-2xl"
   >
     <TableHeader />
     <div class="overflow-hidden">
       <div
-        class="grid grid-cols-5 w-full bg-[#16161a] h-[50px] text-white items-center ps-3 pe-2 border border-[#2d2d2d]"
+        class="grid w-full bg-[#16161a] h-[50px] text-white items-center ps-3 pe-2 border border-[#2d2d2d]"
+        style="
+          grid-template-columns:
+            minmax(150px, 1fr) minmax(250px, 1fr) minmax(150px, 1fr)
+            minmax(150px, 1fr) minmax(150px, 1fr);
+        "
       >
         <div class="w-full overflow-x-visible">
           <div class="flex gap-11 items-center">
@@ -67,7 +72,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div
-        class="py-2.5 max-h-[var(--dynamic-height)] overflow-y-scroll scroll-smooth scrollbar-thin max-w-xl md:max-w-full"
+        class="py-2.5 max-h-[var(--dynamic-height)] overflow-y-scroll scroll-smooth scrollbar-thin"
       >
         <Item
           v-for="(item, index) in tableItems"
