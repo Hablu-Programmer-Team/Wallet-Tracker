@@ -16,7 +16,7 @@ const tableItems = Array.from({ length: 40 }, (_, index) => ({
 
 <template>
   <div
-    class=" flex-1 lg:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
+    class="flex-1 lg:flex-[0.8] bg-[#0E0E10] rounded-sm border border-white/20"
   >
     <TableHeader />
     <div>
@@ -49,7 +49,7 @@ const tableItems = Array.from({ length: 40 }, (_, index) => ({
       </div>
     </div>
     <div
-      class="py-2.5 max-h-screen overflow-y-scroll scroll-smooth scrollbar-thin pb-[120px]"
+      class="py-2.5 max-h-[80svh] overflow-y-scroll scroll-smooth scrollbar-thin pb-[120px]"
     >
       <Item
         v-for="(item, index) in tableItems"

@@ -24,11 +24,11 @@ const items = Array.from({ length: 20 }, (_, index) => ({
 
 <template>
   <div
-    class="rounded-sm hidden lg:block h-full flex-1 md:flex-[0.2] border border-white/20 max-h-screen"
+    class="rounded-sm hidden lg:block h-full flex-1 md:flex-[0.2] border border-white/20"
   >
     <SidebarHeader />
     <div
-      class="py-2.5 max-h-screen overflow-y-scroll scroll-smooth scrollbar-thin pb-40"
+      class="py-2.5 max-h-[80svh] overflow-y-scroll scroll-smooth scrollbar-thin"
     >
       <Card
         v-for="(item, index) in items"

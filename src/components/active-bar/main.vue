@@ -12,7 +12,7 @@ const MyFunc = (idx: number): number => (active.value = idx);
 
 <template>
   <aside
-    class="p-4 max-w-20 text-white/50  border-e border-[#1f1f1f] flex flex-col justify-between h-screen"
+    class="p-4 max-w-20 text-white/50 border-e border-[#1f1f1f] flex flex-col justify-between h-[95svh]"
   >
     <div
       class="flex flex-col items-center gap-4 pb-4 border-b border-[#1f1f1f]"
@@ -34,7 +34,7 @@ const MyFunc = (idx: number): number => (active.value = idx);
         v-for="item in SidebarDatas"
         :key="item.id"
         v-on:click="MyFunc(item.id)"
-        class="flex flex-col items-center cursor-pointer gap-1 hover:text-white/80 transition-all duration-300 "
+        class="flex flex-col items-center cursor-pointer gap-1 hover:text-white/80 transition-all duration-300"
         :class="{ 'text-[#10b981]': item.id === active }"
       >
         <component v-if="item.icon" :is="item.icon" class="size-4" />
