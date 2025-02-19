@@ -5,10 +5,10 @@ import icon2 from "../icons/icon2.vue";
 <template>
   <div class="flex gap-2.5 items-center cursor-pointer">
     <button
-      class="bg-[#c2a95d]/30 flex gap-1 text-[#c2a95d] font-bold rounded-full px-2.5 py-1 items-center cursor-pointer text-sm"
+      class="bg-[#c2a95d]/30 flex gap-1 text-[#c2a95d]/70 font-bold rounded-full px-2.5 py-1 items-center cursor-pointer text-xs"
     >
       <icon2 /> Alert
     </button>
-    <div class="bg-[#1B1B1F] px-0.5 py-1 rounded-md"><bin /></div>
+    <div class="bg-[#1B1B1F] px-0.5 py-1 rounded-md"><bin  /></div>
   </div>
 </template>

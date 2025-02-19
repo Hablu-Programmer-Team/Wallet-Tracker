@@ -12,10 +12,10 @@ const MyFunc = (idx: number): number => (active.value = idx);
 
 <template>
   <aside
-    class="p-4 max-w-20 text-slate-300 border-e border-gray-400/80 flex flex-col justify-between h-screen"
+    class="p-4 max-w-20 text-white/50  border-e border-[#1f1f1f] flex flex-col justify-between h-screen"
   >
     <div
-      class="flex flex-col items-center gap-4 pb-4 border-b border-slate-200/40"
+      class="flex flex-col items-center gap-4 pb-4 border-b border-[#1f1f1f]"
     >
       <div
         class="text-center inline-block rounded-lg p-2 bg-white/10 cursor-pointer"
@@ -32,21 +32,21 @@ const MyFunc = (idx: number): number => (active.value = idx);
         v-for="item in SidebarDatas"
         :key="item.id"
         v-on:click="MyFunc(item.id)"
-        class="flex flex-col items-center cursor-pointer gap-1"
-        :class="{ 'text-green-400': item.id === active }"
+        class="flex flex-col items-center cursor-pointer gap-1 hover:text-white/80 transition-all duration-300 "
+        :class="{ 'text-[#10b981]': item.id === active }"
       >
-        <component v-if="item.icon" :is="item.icon" class="size-5.5" />
-        <p class="text-xs text-center">{{ item.label }}</p>
+        <component v-if="item.icon" :is="item.icon" class="size-4" />
+        <p class="text-xs hover:text-white/70 text-center">{{ item.label }}</p>
       </div>
     </div>
 
     <div class="space-y-4">
       <div class="flex flex-col items-center cursor-pointer gap-1">
-        <component v-if="Gear" :is="Gear" />
+        <component class="size-4" v-if="Gear" :is="Gear" />
         <p class="text-xs text-center">Settings</p>
       </div>
       <div class="flex flex-col items-center cursor-pointer gap-1">
-        <component v-if="User" :is="User" />
+        <component class="size-5" v-if="User" :is="User" />
         <p class="text-xs text-center">Accounts</p>
       </div>
     </div>

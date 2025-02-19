@@ -35,7 +35,7 @@ const sideHeader: sideHeaderPros[] = [
   <!-- bottom header  -->
   <div class="py-3 px-2 flex gap-10 items-center justify-between">
     <button
-      class="text-xs px-3 py-1 bg-[#1f1f1f] text-white/50 font-semibold cursor-pointer flex items-center gap-2 rounded-sm md:text-sm"
+      class="text-xs px-3 py-1 bg-custom-gray text-white/50 font-semibold cursor-pointer flex items-center gap-2 rounded-sm md:text-sm"
     >
       <FilterSvg className="w-4 h-4" /> Filter
     </button>
@@ -43,7 +43,7 @@ const sideHeader: sideHeaderPros[] = [
       <button
         class="text-xs text-nowrap px-3 py-1 bg-[#1f1f1f] text-white/50 font-semibold cursor-pointer flex items-center gap-2 rounded-sm md:text-sm"
       >
-        Filter +
+        Add Wallet +
       </button>
       <button class="cursor-pointer bg-[#1f1f1f] px-2 py-1 rounded-sm">
         <SoundSvg class="w-4" />
