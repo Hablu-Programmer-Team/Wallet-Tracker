@@ -12,17 +12,24 @@ import Sidebar from "./components/sidebar/main.vue";
 
 <template>
   <main class="bg-[#0E0E10]">
-    <div class="mx-auto flex flex-col gap-x-1.5 h-screen max-h-screen">
-      <div class="flex gap-x-1.5">
-        <ActiveBar />
-        <div class="w-full space-y-1.5">
+    <div class="mx-auto flex flex-col h-screen max-h-screen overflow-hidden">
+      <div class="flex h-full gap-x-1.5">
+        <ActiveBar class="shrink-0" />
+        <div class="flex-1 flex flex-col space-y-1.5 h-full overflow-hidden">
           <Navbar />
-          <div class="flex w-full gap-1.5 pe-3.5 overflow-y-hidden">
-            <Sidebar />
-            <DataTable />
+
+          <div class="flex w-full gap-1.5 pe-3.5 flex-1 overflow-hidden">
+            <Sidebar class="shrink-0" />
+
+            <div class="flex-1 overflow-hidden">
+              <div class="w-full h-full overflow-x-auto">
+                <DataTable />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <FooterItem
         alertBadge1="97"
         twitterBadge="99+"
@@ -39,3 +46,22 @@ import Sidebar from "./components/sidebar/main.vue";
     </div>
   </main>
 </template>
+
+<style>
+::-webkit-scrollbar {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>

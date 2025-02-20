@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DoubbleArrowSvg from "../icons/DoubbleArrowSvg.vue";
+import DoubleArrowSvg from "../icons/DoubleArrowSvg.vue";
 
 import { ref } from "vue";
 
@@ -26,20 +26,21 @@ const defineHeaderId = (id: number) => {
     <button
       class="text-[#A0A0A0] bg-[#1f1f1f] px-1 rounded-br-md cursor-pointer"
     >
-      <DoubbleArrowSvg class="w-3" />
+      <DoubleArrowSvg class="w-3" />
     </button>
     <button
       :key="header.id"
       v-for="header in sideHeader"
       @click="defineHeaderId(header.id)"
-      class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm"
-      :class="
-        headerId === header.id
-          ? ' border-[#10b981] text-[#10b981]'
-          : 'text-[#A0A0A0] border-[#121212]'
-      "
+      class="w-full py-2.5 cursor-pointer border-b-2 font-semibold text-nowrap text-xs md:text-sm px-4"
+      :class="{
+        ' border-[#10b981] text-[#10b981]': headerId === header.id,
+        'text-[#A0A0A0] border-[#121212]': headerId !== header.id,
+      }"
     >
       {{ header.name }}
     </button>
   </div>
 </template>
+
+<style></style>

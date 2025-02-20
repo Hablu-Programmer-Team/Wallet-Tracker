@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-custom-gray:#1f1f1f,
+  --color-custom-gray: #1f1f1f,
 }
+
 .scrollbar-thin::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }

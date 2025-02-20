@@ -20,7 +20,7 @@ defineProps({
 
 <template>
   <div
-    class="text-gray-600 p-2 shadow-lg flex flex-col  border-[#1f1f1f] w-full"
+    class="text-gray-600 p-2 shadow-lg flex flex-col border-[#1f1f1f] w-full"
     :class="{ 'border-t': !isLastItem, 'border-y': isLastItem }"
   >
     <div class="flex items-center justify-between">
@@ -38,7 +38,9 @@ defineProps({
           <component v-if="iconTwo" :is="iconTwo" width="20" height="20" />
         </div>
 
-        <span class="text-yellow-500/80 text-sm font-semibold">{{ username }}</span>
+        <span class="text-yellow-500/80 text-sm font-semibold">{{
+          username
+        }}</span>
         <span
           class="bg-[#1f1f1f] text-slate-300 px-2.5 py-0.5 rounded text-sm font-bold"
         >
@@ -54,7 +56,12 @@ defineProps({
 
     <div class="flex items-center justify-start gap-2 text-sm font-bold">
       <span class="font-bold hover:text-gray-500">{{ action }}</span>
-      <span :class="action === 'Buy' ? 'text-[#10b981]' : 'text-red-500/60'">
+      <span
+        :class="{
+          'text-[#319b64]': action === 'Buy',
+          'text-red-500/60': action === 'Sell',
+        }"
+      >
         {{ amount }}
       </span>
 
@@ -68,7 +75,9 @@ defineProps({
         />
       </div>
 
-      <span class=" text-xs md:text-base font-semibold text-white/80">{{ tokenName }}</span>
+      <span class="text-xs md:text-base font-semibold text-white/80">{{
+        tokenName
+      }}</span>
     </div>
 
     <div class="flex justify-between items-center text-sm font-bold">
@@ -80,15 +89,21 @@ defineProps({
         &nbsp;
         <span class="hover:text-gray-500 text-sm">MC: </span>
         <span
-        class="text-xs"
-          :class="action === 'Buy' ? 'text-slate-300/80' : 'text-yellow-400/80'"
+          class="text-xs"
+          :class="{
+            'text-slate-300/80': action === 'Buy',
+            'text-yellow-400/80': action === 'Sell',
+          }"
         >
           {{ marketCap }}
         </span>
       </div>
 
       <div
-        :class="action === 'Buy' ? 'text-[#319b64]' : 'text-red-500/50'"
+        :class="{
+          'text-[#319b64]': action === 'Buy',
+          'text-red-500/60': action === 'Sell',
+        }"
         class="text-xs text-right"
       >
         {{ time }}

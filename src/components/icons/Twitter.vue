@@ -8,7 +8,7 @@ defineProps<{ className?: string }>();
     width="14"
     height="14"
     viewBox="0 0 512 512"
-    :class="'text-white'"
+    :class="className"
   >
     <path
       fill="currentColor"
